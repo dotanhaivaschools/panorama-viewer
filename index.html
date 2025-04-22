@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panorama Viewer 360°</title>
+  <link rel="stylesheet" href="cdn/pannellum.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    #panorama {
+      width: 100%;
+      height: 600px;
+      margin-top: 20px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="text"] {
+      padding: 6px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 8px 12px;
+      font-size: 16px;
+      margin: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌀 Trình xem ảnh Panorama 360°</h1>
+
+  <input type="file" id="fileInput" accept="image/*" />
+  <br><br>
+
+  <input type="text" id="urlInput" placeholder="Hoặc dán URL ảnh panorama..." style="width: 60%;">
+  <button onclick="loadFromURL()">Tải từ URL</button>
+
+  <div style="margin-top: 20px;">
+    <button onclick="rotateLeft()">⏪ Trái</button>
+    <button onclick="rotateRight()">⏩ Phải</button>
+    <button onclick="toggleAutoRotate()">🔄 Tự xoay</button>
+  </div>
+
+  <div id="panorama"></div>
+
+  <script src="cdn/pannellum.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
